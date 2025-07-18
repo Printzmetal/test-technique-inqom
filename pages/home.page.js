@@ -7,7 +7,7 @@ class HomePage {
   }
 
   async goto() {
-    await this.page.goto(data.baseUrl);
+    await this.page.goto(data.baseUrl, { waitUntil: 'networkidle', timeout: 60000 });
   }
 }
 

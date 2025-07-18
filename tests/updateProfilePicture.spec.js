@@ -5,6 +5,7 @@ const { ProfilePage } = require('../pages/profile.page.js');
 const data = require('../data/dataFile.json');
 
 test('Login and update profile picture', async ({ page }) => {
+  test.setTimeout(60000);
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
   const profilePage = new ProfilePage(page);
@@ -12,7 +13,6 @@ test('Login and update profile picture', async ({ page }) => {
   // Reach website's homepage and close pop-ups
   homePage.goto();
   await homePage.getRefuseCookiesButton.click();
-  await page.pause();
 
   // Login with valid credentials 
   const loginResponsePromise = page.waitForResponse(response =>
