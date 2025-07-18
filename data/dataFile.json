@@ -1,5 +1,5 @@
 {
-  "baseUrl" : "https://www.welcometothejungle.com",
+  "baseUrl" : "https://www.welcometothejungle.com/fr",
   "emailAddress" : "chalardpatrik@gmail.com",
   "loginPassword" : "TestUserQA?25",
   "loginSessionsRequest" : "/sessions",
