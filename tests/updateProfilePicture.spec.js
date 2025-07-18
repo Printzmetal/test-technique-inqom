@@ -13,7 +13,7 @@ test('Login and update profile picture', async ({ page }) => {
   homePage.goto();
   if (await homePage.isCountryModalVisible())
     await homePage.getCloseCountryModalButton.click();
-  await homePage.getRefuseCookiesButton.click();
+  await homePage.getStayOptionCountryModalButton.click();
   
   // Login with valid credentials 
   const loginResponsePromise = page.waitForResponse(response =>
