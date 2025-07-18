@@ -32,6 +32,8 @@ test('Login and update profile picture', async ({ page }) => {
   // Reach profile edition
   await profilePage.getMySpaceHeaderButton.click();
   await profilePage.getProfileMenuItem.click();
+    await page.waitForURL(/\/fr\/me\/profile/);
+  await expect(page).toHaveURL(/\/fr\/me\/profile/);
   await profilePage.getEditProfileButton.click();
 
   // Load profile picture and check new value
