@@ -12,7 +12,6 @@ test('Login and update profile picture', async ({ page }) => {
   // Reach website's homepage and close pop-ups
   homePage.goto();
   await homePage.getRefuseCookiesButton.click();
-  await page.pause();
 
   // Login with valid credentials 
   const loginResponsePromise = page.waitForResponse(response =>

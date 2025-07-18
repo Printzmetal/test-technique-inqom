@@ -15,7 +15,6 @@ class ProfilePage {
 
   async checkProfileUpdateResponse(updateData) {
     expect(updateData).toHaveProperty(data.profileAvatarProperty);
-    expect(updateData.user.avatar.url).toBeTruthy();
     expect(updateData.user.avatar.url).toMatch(/^https:\/\/cdn-images\.welcometothejungle\.com/);
   }
 }
