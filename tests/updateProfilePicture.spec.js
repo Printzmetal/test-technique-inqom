@@ -12,8 +12,8 @@ test('Login and update profile picture', async ({ page }) => {
   // Reach website's homepage, manage country modal if visible and close cookies pop-up
   homePage.goto();
   if (await homePage.isCountryModalVisible())
-    await homePage.getCloseCountryModalButton.click();
-  await homePage.getStayOptionCountryModalButton.click();
+    await homePage.getStayOptionCountryModalButton.click();
+  await homePage.getRefuseCookiesButton.click();
   
   // Login with valid credentials 
   const loginResponsePromise = page.waitForResponse(response =>
