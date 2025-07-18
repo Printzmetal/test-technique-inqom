@@ -5,15 +5,16 @@ const { ProfilePage } = require('../pages/profile.page.js');
 const data = require('../data/dataFile.json');
 
 test('Login and update profile picture', async ({ page }) => {
-  test.setTimeout(60000);
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
   const profilePage = new ProfilePage(page);
 
-  // Reach website's homepage and close pop-ups
+  // Reach website's homepage, manage country modal if visible and close cookies pop-up
   homePage.goto();
+  if (await homePage.isCountryModalVisible())
+    await homePage.getLocalisationButton.click();
   await homePage.getRefuseCookiesButton.click();
-
+  
   // Login with valid credentials 
   const loginResponsePromise = page.waitForResponse(response =>
     response.url().includes(data.loginSessionsRequest) && response.status() === 201
@@ -31,7 +32,7 @@ test('Login and update profile picture', async ({ page }) => {
   // Reach profile edition
   await profilePage.getMySpaceHeaderButton.click();
   await profilePage.getProfileMenuItem.click();
-    await page.waitForURL(/\/fr\/me\/profile/);
+  await page.waitForURL(/\/fr\/me\/profile/);
   await expect(page).toHaveURL(/\/fr\/me\/profile/);
   await profilePage.getEditProfileButton.click();
 

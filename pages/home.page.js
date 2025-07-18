@@ -3,11 +3,21 @@ const data = require('../data/dataFile.json');
 class HomePage {
   constructor(page) {
     this.page = page;
+    this.getLocalisationButton = page.getByTestId('country-banner-redirect-button');
     this.getRefuseCookiesButton = page.getByRole('button', { name: 'Fermer sans accepter les' });
   }
 
   async goto() {
-    await this.page.goto(data.baseUrl, { waitUntil: 'networkidle', timeout: 60000 });
+    await this.page.goto(data.baseUrl);
+  }
+
+  async isCountryModalVisible(timeout = 3000) {
+    try {
+      await this.getLocalisationButton.waitFor({ state: 'visible', timeout });
+      return true;
+    } catch {
+      return false;
+    }
   }
 }
 
