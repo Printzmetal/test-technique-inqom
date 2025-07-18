@@ -1,0 +1,14 @@
+{
+  "baseUrl" : "https://www.welcometothejungle.com",
+  "profileUrl" : "/fr/me/profile",
+  "emailAddress" : "chalardpatrik@gmail.com",
+  "loginPassword" : "TestUserQA?25",
+  "loginSessionsRequest" : "/sessions",
+  "profileRegistrationRequest" : "/registrations",
+  "tokenProperty" : "user.token",
+  "firstnameProperty" : "user.firstname",
+  "profileAvatarProperty" : "user.avatar.url",
+  "userFirstname" : "Patrick",
+  "profilePicturePath" : "data/profilePicture.jpg",
+  "url": "https://cdn-images.welcometothejungle.com/tP0mkiDYp_OsxvjOxbjOLRJOkr7Z0DonV5mpR2bfl34/rs:auto:2000::/q:85/czM6Ly93dHRqLXByb2R1Y3Rpb24vdXBsb2Fkcy9hcHBsaWNhbnRzL2NmNWQ0YTVhZGQvYXZhdGFycy9wcm9maWxlcGljdHVyZS5qcGc"
+}
