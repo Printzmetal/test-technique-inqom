@@ -4,6 +4,7 @@ class HomePage {
   constructor(page) {
     this.page = page;
     this.getLocalisationButton = page.getByTestId('country-banner-redirect-button');
+    this.getCloseCountryModalButton = page.getByRole('button', { name: 'Close', exact: true });
     this.getRefuseCookiesButton = page.getByRole('button', { name: 'Fermer sans accepter les' });
   }
 
